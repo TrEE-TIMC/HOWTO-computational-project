@@ -43,20 +43,18 @@
 {% block header %}
   {%- block navbar -%}
   <div class="navbar">
-
-  {#
+    {#
     <a class="navbar-brand" href="{{ pathto('index') }}">
       <img src="{{ pathto('_static/logos/logo_1.png', 1) }}" \>
-    </a>
-    #}
+    </a>#}
     <ul class="nav navbar-nav">
-    {#	
       <li>
-        <a href="{{ pathto('index') }}">Lab notebook
+        <a href="{{ pathto('index') }}">Home
           <img src="{{ pathto('_static/logos/button_orange.png', 1) }}">
         </a>
         </li>
 
+    {#	
     <li><a href="{{ pathto('todo') }}">TODO
           <img src="{{ pathto('_static/logos/button_blue.png', 1) }}">
           </a>
