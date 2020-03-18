@@ -3,41 +3,19 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-=============================
-An electronique labnotebook
-=============================
+=================================================
+How to organize a computational (biology) project
+=================================================
 
 .. contents::
 
 
-Entry n2
-==========
+You just joined the lab and you are wondering how best to organize yourself!
+Or you are just getting started on the computational aspect of your project,
+and would like to start with all of the best practices.
 
-.. raw:: html
+Here are recommendations, references, and general guidelines.
 
-   <span class="date">
-
-February 26th, 2020
-
-.. raw:: html
-
-   </span>
-
-
-My second entry is very interesting. It contains math equation 
-:math:`\mu = \sigma X`
-
-Entry n1
-==========
-
-.. raw:: html
-
-   <span class="date">
-
-February 25th, 2020
-
-.. raw:: html
-
-   </span>
-
-Here's my first entry!
+First, take a quick look at `A quick guide to organize your computational
+biology project
+<https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424>`_
