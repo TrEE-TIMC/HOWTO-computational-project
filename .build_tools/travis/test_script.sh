@@ -11,6 +11,7 @@ set -e
 run_tests() {
     pushd docs/
     make html SPHINXOPTS="-W"
+    touch _build/html/.nojekyll  # For proper display of HTML by github-pages
     popd
 }
 
