@@ -24,3 +24,5 @@ External resources
     basics and advanced scientific computing in Python topics: debugging your
     code, mathematical optimization, speeding up your code, image
     processing, machine learning, etc
+
+- `The Fraser Lab Method of Following the Scientific Literature <https://fraserlab.com/2013/09/28/The-Fraser-Lab-method-of-following-the-scientific-literature/>`_
