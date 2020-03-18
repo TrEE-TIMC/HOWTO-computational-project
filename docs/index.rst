@@ -124,3 +124,17 @@ Tips and tricks with maintaining an electronic labnotebook
   collaborators. This page can be password protected through
   `.htpasswd`/`.htaccess` system, but you need to reach out to IT in order to
   activate this.
+
+4. Automating your code
+=======================
+
+Make sure you can rerun your analysis from scratch with a single or very few
+commands!
+
+I use makefiles in order to do this, but creating a large bash file would work
+as well. You can also add all your code in a jupyter notebook or Rmd file, but
+beware that jupyter notebooks don't play well with version control. They are
+also not ideal for code reusability.
+
+You can also set up `travis <travis-ci.org/>`_ in order to rerun your whole
+computational pipeline from scratch every time you push to github.
