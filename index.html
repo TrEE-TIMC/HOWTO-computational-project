@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  
+    <title>How to organize a computational (biology) project &#8212; EPICON  documentation</title>
+  <!-- htmltitle is before nature.css - we use this hack to load bootstrap first -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+        href="_static/css/bootstrap.min.css"
+	media="screen" />
+    <script src="_static/js/jquery.js"
+          type="text/javascript"></script>
+  <script src="_static/js/bootstrap.min.js"
+          type="text/javascript"></script>
+
+
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet"
+        href="_static/css/jhepc.css"
+         media="screen" />
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif'
+        rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans'
+        rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow'
+        rel='stylesheet' type='text/css'>
+
+
+
+  </head><body><div class="navbar">
+
+  
+    <ul class="nav navbar-nav">
+    
+    </ul>
+  </div>
+    <div class="container">
+  
+  <div class="section" id="how-to-organize-a-computational-biology-project">
+<h1><a class="toc-backref" href="#id1">How to organize a computational (biology) project</a><a class="headerlink" href="#how-to-organize-a-computational-biology-project" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#how-to-organize-a-computational-biology-project" id="id1">How to organize a computational (biology) project</a></p>
+<ul>
+<li><p><a class="reference internal" href="#organizing-your-code" id="id2">1. Organizing your code!</a></p></li>
+<li><p><a class="reference internal" href="#using-version-control" id="id3">2. Using Version Control</a></p>
+<ul>
+<li><p><a class="reference internal" href="#tips-and-tricks-with-git" id="id4">Tips and tricks with git</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#the-electronic-labnotebook" id="id5">3. The electronic labnotebook</a></p>
+<ul>
+<li><p><a class="reference internal" href="#tips-and-tricks-with-maintaining-an-electronic-labnotebook" id="id6">Tips and tricks with maintaining an electronic labnotebook</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#automating-your-code" id="id7">4. Automating your code</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>You just joined the lab and you are wondering how best to organize yourself!
+Or you are just getting started on the computational aspect of your project,
+and would like to start with all of the best practices.</p>
+<p>Here are recommendations, references, and general guidelines.</p>
+<p>First, take a quick look at <a class="reference external" href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424">A quick guide to organize your computational
+biology project</a>.
+While a bit outdated, this paper contains all the core concepts we will
+discuss here.</p>
+<div class="section" id="organizing-your-code">
+<h2><a class="toc-backref" href="#id2">1. Organizing your code!</a><a class="headerlink" href="#organizing-your-code" title="Permalink to this headline">¶</a></h2>
+<p>Think about how to organize your code. I recommend a structure close to
+the one proposed in the <code class="docutils literal notranslate"><span class="pre">quick</span> <span class="pre">guide</span> <span class="pre">to</span> <span class="pre">organize</span> <span class="pre">your</span> <span class="pre">computation</span> <span class="pre">biology</span>
+<span class="pre">project</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>my_awesome_project/
+  - data/
+      - ay2009
+      - …
+  - scripts/
+      - data_cleaning
+      - normalization
+      - statistical_analysis
+      - …
+  - bin/
+      - my_awesome_package
+      - …
+  - results/
+      - notebook.html
+  - doc
+      - paper
+      - 2020_labmeeting
+      - …
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p><cite>data</cite> contains the raw data of your project. Ideally, create a small
+script to automatically download the data.</p></li>
+<li><p><cite>scripts</cite> contains a series of folders, each corresponding to a step in the
+data analysis process. In those folders, add all scripts necessary to this
+step. That includes visualization. A concrete example: working on Hi-C
+data, the first step is always to normalize the data. I thus create a
+folder <cite>normalization</cite> in <cite>scripts</cite>. In it, I add a script called
+<cite>normalize_counts.py</cite> and another one called <cite>plot_contact_counts.py</cite>. The
+first is the script I use to normalize the data. The second is a script I
+use to visualize the raw or the normalize contact counts: it outputs a png
+file for each of my datasets which I can then add to my labnotebook (more
+below).</p></li>
+<li><p><cite>bin</cite> contains any package you may be developping for this particular
+project. It can also be empty if you don’t develop anything.</p></li>
+<li><p><cite>results</cite> contains the labnotebook. This notebook should either by an html
+file or something that can be compiled in an HTML file so that it is easily
+shareable with collaborators.</p></li>
+<li><p><cite>doc</cite> contains any communication document you may be creating relating to
+this project.</p></li>
+</ol>
+<p>By using this fairly standard code organization, anyone will be able to look
+at your project and understand where to find elements.</p>
+<img alt="_images/why_version_control.png" src="_images/why_version_control.png" />
+</div>
+<div class="section" id="using-version-control">
+<h2><a class="toc-backref" href="#id3">2. Using Version Control</a><a class="headerlink" href="#using-version-control" title="Permalink to this headline">¶</a></h2>
+<p>As soon as you have code, you should be using a version control system to
+track changes you make to it. It also allows you to have a backup of your code
+on a server somewhere. Version control system allows you to take snapshots of
+your code at any moment you want.</p>
+<p>There are different tools to perform this. These days, the two most common one
+are <cite>git</cite> and <cite>mercurial</cite>. I personally recommend using <cite>git</cite>, as it is the
+one supported by the platform <cite>GitHub</cite> on which TrEE has an academic
+organization (reach out to Nelle or Sophie to get access to our academic
+organization <a class="reference external" href="https://github.com/TrEE-TIMC">https://github.com/TrEE-TIMC</a>)</p>
+<div class="section" id="tips-and-tricks-with-git">
+<h3><a class="toc-backref" href="#id4">Tips and tricks with git</a><a class="headerlink" href="#tips-and-tricks-with-git" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>There are many publicly available resources to us git: <a class="reference external" href="https://git-scm.com/docs/gittutorial">https://git-scm.com/docs/gittutorial</a></p></li>
+<li><p><em>Start simple</em> get familiar with <cite>git add</cite>, <cite>git commit</cite> and <cite>git push</cite>
+before moving on to more advanced command.</p></li>
+<li><p>If you plan on contributing to an open-source project, you need to be
+familiar with the concept of <strong>branching</strong>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="the-electronic-labnotebook">
+<h2><a class="toc-backref" href="#id5">3. The electronic labnotebook</a><a class="headerlink" href="#the-electronic-labnotebook" title="Permalink to this headline">¶</a></h2>
+<p>Keep track of all and any experiment your run, whether it fails or not! Do
+this in an electronic labnotebook, so that you can easily share it with
+collaborators. This is particularly useful if you are working remotely and/or
+have video confcall meeting regurlarly.</p>
+<div class="section" id="tips-and-tricks-with-maintaining-an-electronic-labnotebook">
+<h3><a class="toc-backref" href="#id6">Tips and tricks with maintaining an electronic labnotebook</a><a class="headerlink" href="#tips-and-tricks-with-maintaining-an-electronic-labnotebook" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>I use <a class="reference external" href="http://www.sphinx-doc.org/en/stable/">sphinx</a>, the tool used to
+write documentation in Python to maintain my electronic labnotebooks.</p></li>
+<li><p>Try to write something everyday.</p></li>
+<li><p>You can ask our IT team to give you access to <cite>lacan</cite> via ssh and create a
+TIMC HTML members’s page to host the html files and share it with your
+collaborators. This page can be password protected through
+<cite>.htpasswd</cite>/<cite>.htaccess</cite> system, but you need to reach out to IT in order to
+activate this.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="automating-your-code">
+<h2><a class="toc-backref" href="#id7">4. Automating your code</a><a class="headerlink" href="#automating-your-code" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you can rerun your analysis from scratch with a single or very few
+commands!</p>
+<p>I use makefiles in order to do this, but creating a large bash file would work
+as well. You can also add all your code in a jupyter notebook or Rmd file, but
+beware that jupyter notebooks don’t play well with version control. They are
+also not ideal for code reusability.</p>
+<p>You can also set up <a class="reference external" href="travis-ci.org/">travis</a> in order to rerun your whole
+computational pipeline from scratch every time you push to github.</p>
+</div>
+</div>
+
+
+    </div>
+<footer class="footer">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Nelle.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.<br/>
+    </p>
+</footer>
+  </body>
+</html>
