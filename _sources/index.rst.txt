@@ -2,13 +2,18 @@
 Resources for computational projects
 ====================================
 
+
+Here are a number of internal and external resources to help lab members
+getting started or perfecting their skills for computational projects.
+
 Internal resources
 ------------------
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   organize_computational_project
+  tips_tricks_python
 
 
 External resources
@@ -26,3 +31,10 @@ External resources
     processing, machine learning, etc
 
 - `The Fraser Lab Method of Following the Scientific Literature <https://fraserlab.com/2013/09/28/The-Fraser-Lab-method-of-following-the-scientific-literature/>`_
+
+
+Contributing to this guide
+--------------------------
+
+Want to contribute? Just create a pull request on the `github repository
+<https://github.com/TrEE-TIMC/HOWTO-computational-project/>`_.

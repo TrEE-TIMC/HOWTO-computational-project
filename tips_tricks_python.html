@@ -25,6 +25,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="How to organize a computational (biology) project" href="organize_computational_project.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport'
@@ -56,13 +57,37 @@
   </div>
     <div class="container">
   
-  <div class="section" id="my-running-todo-list">
-<h1>My running TODO list<a class="headerlink" href="#my-running-todo-list" title="Permalink to this headline">¶</a></h1>
-<p>Here’s my running TODO list</p>
+  <div class="section" id="tips-and-tricks-writing-code-in-python">
+<h1>Tips and tricks writing code in Python<a class="headerlink" href="#tips-and-tricks-writing-code-in-python" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Update my labnotebook template so that I can easily create a new labnotebook</p></li>
-<li><p><span class="strike">Relax and take a coffee break!</span></p></li>
+<li><p>Use a good text editor.</p>
+<ul>
+<li><p><a class="reference external" href="https://atom.io/">atom</a></p></li>
+<li><p>vim, emacs if you know how to use those text editors already.</p></li>
 </ul>
+</li>
+<li><p>Look at your data and results as much as you can. That’s an excellent way to
+ensure the code you are writing is correct.</p></li>
+<li><p>Configure your text editor to perform static checks on your code using
+<a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a>. <code class="docutils literal notranslate"><span class="pre">flake8</span></code> is a tool that
+will tell you (1) if there are mistakes and typos in your code immediatly;
+(2) enforce Python’s default style guide <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">pep8</a> on your code.</p></li>
+<li><p>Be familiar with <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a>. Proper
+formatting of your code with reduce cognitive load with writing and reading
+it.</p></li>
+</ul>
+<div class="section" id="useful-packages">
+<h2>Useful packages<a class="headerlink" href="#useful-packages" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/argparse.html">argparse:</a> to easily
+make user-friendly command-line interfaces.</p></li>
+<li><p><a class="reference external" href="https://ipython.org/install.html">ipython</a> for interactive python usage.
+Comes with a powerful debugging and profiling tool. Allows to run any
+script in ipython and play with the outputs.</p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/memory-profiler/">memory-profiler</a> to monitor
+memory usage of a program.</p></li>
+</ul>
+</div>
 </div>
 
 
